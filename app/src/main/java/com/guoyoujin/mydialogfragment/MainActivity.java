@@ -7,10 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.guoyoujin.dialog.mylibrary.BaseDialogFragment;
-import com.guoyoujin.dialog.mylibrary.MDDialog;
 
 public class MainActivity  extends AppCompatActivity {
 
@@ -30,10 +30,6 @@ public class MainActivity  extends AppCompatActivity {
                 "君不见，黄河之水天上来，奔流到海不复回；君不见，高堂明镜悲白发，朝如青丝暮如雪。"};
         button1 = (Button)this.findViewById(R.id.button1);
         button2 = (Button)this.findViewById(R.id.button2);
-
-        /*final LinearLayout ll = new LinearLayout(this);
-        LayoutInflater.from(this).inflate(R.layout.content, ll);*/
-
         button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -94,31 +90,60 @@ public class MainActivity  extends AppCompatActivity {
 //                        .setShowButtons(true)
 //                        .create()
 //                        .show();
-                new MDDialog.Builder(MainActivity.this)
-                        .setMessages(messages)
-                        .setTitle("一首古诗")
-                        .setNegativeButton(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
+                new BaseDialogFragment.Builder(MainActivity.this)
+                    .setContentView(R.layout.content_dialog)
+                    .setContentViewOperator(new BaseDialogFragment.ContentViewOperator() {
+                        @Override
+                        public void operate(View contentView) {
+                            EditText et = (EditText)contentView.findViewById(R.id.edit0);
+                            et.setHint("hint set in operator");
+                        }
+                    })
+//                      .setMessages(messages)
+                    .setTitle("添加")
+                    .setNegativeButton(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                        }
+                    })
+                    .setPositiveButton(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    })
+                    .setPositiveButtonMultiListener(new BaseDialogFragment.OnMultiClickListener() {
+
+                        @Override
+                        public void onClick(View clickedView, View contentView) {
+                            EditText et = (EditText)contentView.findViewById(R.id.edit0);
+                            Toast.makeText(getApplicationContext(), "edittext 0 : " + et.getText(), Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setNegativeButtonMultiListener(new BaseDialogFragment.OnMultiClickListener() {
+
+                        @Override
+                        public void onClick(View clickedView, View contentView) {
+                            EditText et = (EditText)contentView.findViewById(R.id.edit1);
+                            Toast.makeText(getApplicationContext(), "edittext 1 : " + et.getText(), Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setOnItemClickListener(new BaseDialogFragment.OnItemClickListener() {
+                        @Override
+                        public void onItemClicked(int index) {
+                            if (index == 0) {
+                                Toast.makeText(getApplicationContext(), "index 0", Toast.LENGTH_SHORT).show();
+                            } else if (index == 1) {
+                                Toast.makeText(getApplicationContext(), "index 1", Toast.LENGTH_SHORT).show();
+                            } else if (index ==2 ){
+                                Toast.makeText(getApplicationContext(), "index 2", Toast.LENGTH_SHORT).show();
                             }
-                        })
-                        .setPositiveButton(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Toast.makeText(getApplicationContext(), "positive", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setOnItemClickListener(new MDDialog.OnItemClickListener() {
-                            @Override
-                            public void onItemClicked(int index) {
-                                Toast.makeText(getApplicationContext(), messages[index], Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setWidthMaxDp(600)
-                        .setShowTitle(false)
-                        .setShowButtons(true)
-                        .create()
-                        .show();
+                        }
+                    })
+                    .setWidthMaxDp(600)
+                    .setShowButtons(true)
+                    .create()
+                    .show(MainActivity.this.getSupportFragmentManager(),"Base");
             }
         });
 
@@ -127,30 +152,57 @@ public class MainActivity  extends AppCompatActivity {
             @TargetApi(Build.VERSION_CODES.HONEYCOMB)
             @Override
             public void onClick(View v) {
+//                new MDDialog.Builder(MainActivity.this)
+//                        .setMessages(messages)
+//                        .setTitle("一首古诗")
+//                        .setNegativeButton(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                            }
+//                        })
+//                        .setPositiveButton(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                Toast.makeText(getApplicationContext(), "positive", Toast.LENGTH_SHORT).show();
+//                            }
+//                        })
+//                        .setOnItemClickListener(new MDDialog.OnItemClickListener() {
+//                            @Override
+//                            public void onItemClicked(int index) {
+//                                Toast.makeText(getApplicationContext(), messages[index], Toast.LENGTH_SHORT).show();
+//                            }
+//                        })
+//                        .setWidthMaxDp(600)
+//                        .setShowTitle(false)
+//                        .setShowButtons(true)
+//                        .create()
+//                        .show();
+
                 new BaseDialogFragment.Builder(MainActivity.this)
-                        .setMessages(messages)
-                        .setTitle("一首古诗")
-                        .setNegativeButton(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                            }
-                        })
-                        .setPositiveButton(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Toast.makeText(getApplicationContext(), "positive", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setOnItemClickListener(new BaseDialogFragment.OnItemClickListener() {
-                            @Override
-                            public void onItemClicked(int index) {
-                                Toast.makeText(getApplicationContext(), messages[index], Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setWidthMaxDp(600)
-                        .setShowButtons(true)
-                        .create()
-                        .show(MainActivity.this.getSupportFragmentManager(),"Base");
+                    .setMessages(messages)
+                    .setTitle("一首古诗")
+                    .setNegativeButton(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                        }
+                    })
+                    .setPositiveButton(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(getApplicationContext(), "positive", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setOnItemClickListener(new BaseDialogFragment.OnItemClickListener() {
+                        @Override
+                        public void onItemClicked(int index) {
+                            Toast.makeText(getApplicationContext(), messages[index], Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setWidthMaxDp(600)
+                    .setShowButtons(true)
+                    .create()
+                    .show(MainActivity.this.getSupportFragmentManager(),"Base");
+                
             }
         });
     }
