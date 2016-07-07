@@ -1,5 +1,7 @@
 # MyDialogFragment
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MDDialog-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3822)
+The project comes from
+[![Carbs0126](https://github.com/Carbs0126/MDDialog]
+Think you Carbs0126(https://github.com/Carbs0126]
 
 ## Abstract
 a material designed style dialog, can add operation of content view, set messages, respond to onclick of messages items and so on
@@ -25,7 +27,7 @@ this MDDialog has many interesting configurations such as :
  first add dependences
 ```
   dependencies {
-    compile 'com.trycatch.android:MDDialog:1.0.0'
+    compile 'com.trycatch.android:mydialogfragment:1.0.0'
   }
 ```
  how to build the MyDialogFragment in java code
