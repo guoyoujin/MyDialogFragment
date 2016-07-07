@@ -7,17 +7,14 @@ Think you Carbs0126(https://github.com/Carbs0126]
 a material designed style dialog, can add operation of content view, set messages, respond to onclick of messages items and so on
 
 ## Introduction
-an MDDialog inspired by the Material Design Pattern. You can get a MyDialogFragment style dialog quickly by using MyDialogFragment Builder.
+an MyDialogFragment inspired by the Material Design Pattern. You can get a MyDialogFragment style dialog quickly by using MyDialogFragment Builder.
 this MDDialog has many interesting configurations such as :
   1. you can hide or show title or positive/negative button(or both)
   2. you can add a customized view into the MyDialogFragment, and can add code to control the customized view in Builder' fuction "setContentViewOperator(...)"
   3. you can set an String[] messages into MyDialogFragment, and each item of messages will be one view in MyDialogFragment, and can set setOnItemClickListener(...) for each item of messages.
   4. you can customize the corner's radius of MyDialogFragment.
-  5. MDDialog has the pressed effect of each messages item, and the shape of pressed effect is the same as item's shape
-  6. two ways to set the MDDialog width, the ratio of screen width, or the exact dimension
-  Author:Carbs.Wang
-  
-  Email:yeah0126#yeah.net
+  5. MyDialogFragment has the pressed effect of each messages item, and the shape of pressed effect is the same as item's shape
+  6. two ways to set the MyDialogFragment width, the ratio of screen width, or the exact dimension
 
 ## Screenshot
 <center>
