@@ -25,7 +25,7 @@ this MDDialog has many interesting configurations such as :
  first add dependences
 ```
   dependencies {
-    compile 'cn.carbs.android:MDDialog:1.0.0'
+    compile 'com.trycatch.android:MDDialog:1.0.0'
   }
 ```
  how to build the MyDialogFragment in java code

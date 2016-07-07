@@ -1,4 +1,4 @@
-package com.guoyoujin.dialog.mylibrary;
+package com.guoyoujin.dialog.mydialogfragment;
 
 /**
  * Created by Carbs.Wang on 2016/5/25.

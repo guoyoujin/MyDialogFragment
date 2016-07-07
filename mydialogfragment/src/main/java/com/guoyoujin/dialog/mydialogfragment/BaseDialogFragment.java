@@ -1,4 +1,4 @@
-package com.guoyoujin.dialog.mylibrary;
+package com.guoyoujin.dialog.mydialogfragment;
 
 import android.annotation.TargetApi;
 import android.app.Dialog;
@@ -32,12 +32,7 @@ import android.widget.TextView;
 import java.io.Serializable;
 
 /**
- * 在此写用途
- *
- * @author: guoyoujin
- * @mail: guoyoujin123@gmail.com
- * @date: 2016-07-04 16:36
- * @version: V1.0 <描述当前版本功能>
+ * * created by trycatch 2016/05/17
  */
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
