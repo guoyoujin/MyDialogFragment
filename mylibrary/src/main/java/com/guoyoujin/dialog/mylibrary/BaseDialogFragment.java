@@ -323,47 +323,94 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
             return wrapper.context;
         }
 
+
+        /**
+         * dialog title
+         * @param titleId
+         * @return
+         */
         public Builder setTitle(int titleId) {
             wrapper.title = wrapper.context.getText(titleId);
             return this;
         }
-
+        /**
+         * dialog title
+         * @param title
+         * @return
+         */
         public Builder setTitle(CharSequence title) {
             wrapper.title = title.toString();
             return this;
         }
 
+        /**
+         * dialog message
+         * @param messagesId
+         * @return
+         */
         public Builder setMessages(int messagesId) {
             wrapper.context.getResources().getTextArray(messagesId);
             return this;
         }
 
+        /**
+         * dialog message
+         * @param messages
+         * @return
+         */
         public Builder setMessages(CharSequence[] messages) {
             wrapper.messages = messages;
             return this;
         }
 
+        /**
+         * left iconId
+         * @param iconId
+         * @return
+         */
         public Builder setIcon(int iconId) {
             wrapper.icon = wrapper.context.getResources().getDrawable(iconId);
             return this;
         }
 
+        /**
+         * left icon Drawable
+         * @param icon
+         * @return
+         */
         public Builder setIcon(Drawable icon) {
             wrapper.icon = icon;
             return this;
         }
 
+        /**
+         * set PositiveButton View.OnClickListener callback
+         * @param listener
+         * @return
+         */
         public Builder setPositiveButton(final View.OnClickListener listener) {
             wrapper.btListenerYes = listener;
             return this;
         }
 
+        /**
+         * set PositiveButton View.OnClickListener callback and button text
+         * @param textId
+         * @param listener
+         * @return
+         */
         public Builder setPositiveButton(int textId, final View.OnClickListener listener) {
             wrapper.btTextYes = wrapper.context.getText(textId);
             wrapper.btListenerYes = listener;
             return this;
         }
 
+        /**
+         * set PositiveButton View.OnClickListener callback and button text
+         * @param text
+         * @param listener
+         * @return
+         */
         public Builder setPositiveButton(CharSequence text, final View.OnClickListener listener) {
             wrapper.btTextYes = text;
             wrapper.btListenerYes = listener;
@@ -411,11 +458,21 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
             return this;
         }
 
+        /**
+         * is show tittle
+         * @param showTitle
+         * @return
+         */
         public Builder setShowTitle(boolean showTitle) {
             wrapper.showTitle = showTitle;
             return this;
         }
 
+        /**
+         * is show buttons
+         * @param showButtons
+         * @return
+         */
         public Builder setShowButtons(boolean showButtons) {
             wrapper.showButtons = showButtons;
             return this;
@@ -426,6 +483,11 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
             return this;
         }
 
+        /**
+         * custom view id 
+         * @param layoutResId
+         * @return
+         */
         public Builder setContentView(int layoutResId) {
             wrapper.contentView = null;
             wrapper.contentViewLayoutResId = layoutResId;
@@ -437,17 +499,32 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
             return this;
         }
 
+        /**
+         * custom view
+         * @param contentView
+         * @return
+         */
         public Builder setContentView(View contentView) {
             wrapper.contentView = contentView;
             wrapper.contentViewLayoutResId = 0;
             return this;
         }
 
+        /**
+         *dialog  Ratio width
+         * @param widthRatio
+         * @return
+         */
         public Builder setWidthRatio(float widthRatio){
             wrapper.widthRatio = widthRatio;
             return this;
         }
 
+        /**
+         * dialog width max
+         * @param widthMaxDp
+         * @return
+         */
         public Builder setWidthMaxDp(int widthMaxDp){
             wrapper.widthMaxDp = widthMaxDp;
             return this;
@@ -468,11 +545,21 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
             return this;
         }
 
+        /**
+         * dialog content text color 
+         * @param contentTextColor
+         * @return
+         */
         public Builder setContentTextColor(int contentTextColor){
             wrapper.contentTextColor = contentTextColor;
             return this;
         }
 
+        /**
+         * dialog content divider color
+         * @param contentDividerColor
+         * @return
+         */
         public Builder setContentDividerColor(int contentDividerColor){
             wrapper.contentDividerColor = contentDividerColor;
             return this;
@@ -498,6 +585,10 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
             return this;
         }
 
+        /**
+         * create BaseDialogFragment
+         * @return BaseDialogFragment
+         */
         public BaseDialogFragment create() {
             BaseDialogFragment dialog = new BaseDialogFragment();
             dialog.setCancelable(wrapper.cancelable);
@@ -505,6 +596,11 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
             return dialog;
         }
 
+        /**
+         * build method init BaseDialogFragment
+         * @param tag
+         * @return
+         */
         public Builder showDialog(String tag) {
             BaseDialogFragment dialog = create();
             FragmentTransaction fragmentTransaction = ((AppCompatActivity)(getContext())).getSupportFragmentManager().beginTransaction();
