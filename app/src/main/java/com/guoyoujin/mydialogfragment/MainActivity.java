@@ -8,7 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.guoyoujin.dialog.mydialogfragment.BaseDialogFragment;
 import com.guoyoujin.dialog.mydialogfragment.MDDialog;
 
@@ -18,6 +20,7 @@ public class MainActivity  extends AppCompatActivity {
     Button button2;
     Button button3;
     Button button4;
+    ImageView iv_menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -219,6 +222,15 @@ public class MainActivity  extends AppCompatActivity {
                     .setShowButtons(true)
                     .create()
                     .show(MainActivity.this.getSupportFragmentManager(),MESSAGE_TAG);
+            }
+        });
+    }
+    private void initPop(){
+        iv_menu= (ImageView) findViewById(R.id.iv_menu);
+        iv_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
             }
         });
     }
