@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -90,12 +91,20 @@ public class PopupMenuList extends PopupWindow{
         public boolean outsideTouchable = true;
         
         public Drawable backgroundDrawable = new ColorDrawable(0x00000000);
+        
+        
+        public BaseAdapter adapter;
 
     }
 
     public static class Builder {
 
         private final Wrapper wrapper;
+        
+        private  Builder setAdapter(BaseAdapter adapter){
+            wrapper.adapter = adapter;
+            return this;
+        }
 
         public Builder(Context context) {
             wrapper = new Wrapper();
