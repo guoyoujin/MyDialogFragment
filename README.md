@@ -164,7 +164,7 @@ this `MyDialogFragment` has many interesting configurations such as :
  first add dependences
 ```
   dependencies {
-    compile 'com.trycatch.android:mydialogfragment:1.0.0'
+    compile 'com.trycatch.android:mydialogfragment:1.1.0'
   }
 ```
  how to build the `MyDialogFragment` in java code
