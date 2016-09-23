@@ -57,18 +57,18 @@ public class BaseDialogFragment extends AppCompatDialogFragment implements View.
     }
     private static class Wrapper implements Serializable{
         public CharSequence title;
-        public Context context;
+        public transient Context context;
         public CharSequence[] messages;
-        public Drawable icon;
+        public transient Drawable icon;
         public CharSequence btTextYes;
         public CharSequence btTextNo;
-        public View.OnClickListener btListenerYes;
-        public View.OnClickListener btListenerNo;
-        public OnMultiClickListener btMultiListenerYes;
-        public OnMultiClickListener btMultiListenerNo;
-        public OnItemClickListener onItemClickListener;
-        public View contentView;//content view
-        public ContentViewOperator contentViewOperator;
+        public transient View.OnClickListener btListenerYes;
+        public transient View.OnClickListener btListenerNo;
+        public transient OnMultiClickListener btMultiListenerYes;
+        public transient OnMultiClickListener btMultiListenerNo;
+        public transient OnItemClickListener onItemClickListener;
+        public transient View contentView;//content view
+        public transient ContentViewOperator contentViewOperator;
         public int contentViewLayoutResId;
         public boolean cancelable = true;
         public boolean showTitle = true;
